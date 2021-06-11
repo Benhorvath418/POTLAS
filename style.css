@@ -1,100 +1,170 @@
-body{
-    background-image: url(kepek/jungle-background-black.jpg);
-    color:yellow;
+/* help */
+.piros {
+    border: 1px solid red;
+}
+.fekete {
+    border: 1px solid black;
+}
+.sarga {
+    border: 1px solid yellow;
+}
+/* help vége */
+
+/* General */
+* {
+    box-sizing: border-box;
+}
+body {
+    background-image: url(img/black-background.app.jpg);
+    color: white;
+}
+ul {
+    margin: 0;
+    padding: 0;
+}
+li {
+    list-style: none;
+}
+a,
+a:hover {
+    color: black;
+    text-decoration: none;
 }
 
-#box-1{
-    width: 310px;
-    height: 300px;
-    background-color: rgb(16, 102, 69);
-    border: 5px;
-    text-align: center;
-    margin-left: 20px;
-    float: left;
+/* Header */
+header {
+    background: url(/img/header-bg.jpeg) no-repeat center/cover;
+    background-attachment: fixed;
+    height: 100vh;
 }
-
-#box-2{
-    width: 340px;
-    height: 286px;
-    background-color:rgb(16, 102, 69);
-    border: 5px;
-    text-align: center;
-    margin-right: 100px;
-    float: right;
+header::before {
+    content: "";
+    background: rgba(0, 0, 0, .6);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
-
-#box-3{
-    width: 370px;
-    height: 286px;
-    background-color:rgb(16, 102, 69);
-    border: 5px;
-    text-align: center;
-    margin-right: 20px;
-    float: right;
+header .header {
+    position: relative;
+    z-index: 1;
+    height: 100%;
 }
-
-#box-4{
-    width: 320px;
-    height: 286px;
-    background-color:rgb(16, 102, 69);
-    border: 5px;
-    text-align: center;
-    margin-right: 140px;
-    float: right;
+nav {
+    width: 100%;
 }
-
-#box-5{
-    width: 320px;
-    height: 300px;
-    background-color:rgb(16, 102, 69);
-    border: 5px;
-    text-align: center;
-    margin-right: 280px;
-    float: right;
+nav ul {
+    display: flex;
+    justify-content: space-evenly;
+    background: rgba(0, 0, 0, .6);
 }
-
-.keret{
-    margin: 10px auto;
+nav a {
+    color: whitesmoke;
+    font-size: 1.2rem;
+    display: flex;
     padding: 10px;
-    background-color:rgb(16, 102, 69);
-    color: yellow;
-    font-style: italic;
-    font-size: 75%;
-    box-shadow: 1px 1px 1px black;
+}
+.kepkeret img{
+    float: right;
     text-align: center;
+    font-size: 75%;
+    padding: 0px 5px 5px;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 10px 10px 10px red;
+  }
+
+  #kepkeret img{
+    width: 5px;
+    height: 5px;
+  }
+#behuzas{
+    margin-left: 100px;
+}
+#behuzas2{
+    margin-left: 50px;
+}
+#behuzas3{
+    margin-left: 120px;
 }
 
-#orangutan{
-    border: 5px solid;
-    width: 300px;
-    height: 236px;
+#behuzas4{
+    margin-left: 160px;
 }
-
-#gorilla{
-    border: 5px solid;
-    width: 330px;
-    height: 236px;
-}
-
-#chimpanzee{
-    border: 5px solid;
-    width: 360px;
-    height: 236px;
-}
-
-#bonobo{
-    border: 5px solid;
-    width: 310px;
-    height: 236px;
-}
-
-#siamang{
-    border: 5px solid;
-    width: 310px;
-    height: 236px;
+.box{
+    margin-left: 20px;
 }
 
 a{
-    color:yellow;
-    font-style: italic;
+    color: yellow;
+}
+
+  
+<<<<<<< HEAD
+nav li a{
+    background: rgba(0, 0, 0, .6);
+    color: red;
+    padding: 5px 20px;
+    border-radius: 5px;
+}
+
+h2 {
+	font-weight: bold;
+=======
+header .header-title {
+    width: 100%;
+}
+header h1 {
+    color: whitesmoke;
+    text-align: center;
+}
+header #header-down-button {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+}
+header #header-down-button i {
+    font-size: 100px;
+}
+/* Main */
+
+
+/*                                           --------- MIN DESKTOP ---------             */
+@media (min-width: 1400px) {
+    
+}
+@media (min-width: 1200px) {
+    
+}
+@media (min-width: 992px) {
+    
+}
+@media (min-width: 767px) {
+
+}
+@media (min-width: 575px) {
+    
+}
+
+/*                                           --------- MAX DESKTOP ---------             */
+@media (max-width: 1400px) {
+    
+}
+@media (max-width: 1200px) {
+    
+}
+@media (max-width: 992px) {
+    
+}
+@media (max-width: 767px) {
+    
+}
+@media (max-width: 575px) {
+    
+>>>>>>> 0c1e7ce7b8be54d946e16131a2022ace23fd9c24
 }

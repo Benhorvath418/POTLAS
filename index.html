@@ -1,118 +1,717 @@
+<!--
+    **********************************
+    ********** DOKUMENTÁCIÓ **********
+    **********************************
+    Ez a Projekt a TDD (tesztelés) Maven bemutatására, és a pom.xml file elkészítésére történő alapokra épül.
+    A weboldal teljesen reszponzív, Bootstrap sablon alapra van átdolgozva, ami egy egyoldalas bemutató oldalt jelképez.
+    A különböző Navbar linkekre kattintva, az oldal oda vezérel minket a megfelelő bejegyzéshez.
+    Készítette: Geri és Beni
+-->
+
+
+
 <!DOCTYPE html>
-<html lang="hu">
+<html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="favicon icon" href="kepek/ape-icon.png" type="image/png">
-    <title>Emberszabású majmok</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Alkalmazás_Tesztelés</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap"
+        rel="stylesheet"> <!-- Core theme CSS (includes Bootstrap)-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Yeon+Sung&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap" rel="stylesheet">
+
+    <link href="css/styles.css" rel="stylesheet" />
+    <link href="css/main.css" rel="stylesheet" />
 </head>
-<body>
-<h1>Emberszabású majmok</h1>
-<br>
-<p>Az emberszerűek vagy emberszabásúak <span style="font-style: italic;">(Hominoidea)</span> a főemlősök <span style="font-style: italic;">(Primates)</span> rendjének egy öregcsaládja. Az ide tartozó fajokat a Homo nem, azaz az emberek kivételével az emberszabású majmok névvel is illetik.</p>
-<br>
-<h2>Földrajzi elterjedésük</h2>
-<p>A csimpánzok és a gorillák a trópusi Afrika erdeiben, az orangutánok és a gibbonok pedig Délkelet-Ázsia trópusi őserdeiben élnek (az orangutánok csak Borneó és Szumátra szigetén). Az emberszabású majmok összes faja veszélyeztetett: vadászatuk vagy élőhelyük pusztítása miatt.</p>
-<br>
-<h2>Jellegzetességeik</h2>
-<p>Az emberszabású majmok összes faja meleg égövi erdőkben él, (a gorillák kivételével) sokat tartózkodnak fákon. Testalkatuk ennek megfelelően a következő jellegzetességekkel rendelkezik:</p>
-<ul>
-    <li>nincs farkuk;</li>
-    <li>törzsük rövid és lefelé szélesedik;</li>
-    <li>felső végtagjuk hosszabb, mint az alsó;</li>
-    <li>tudnak két lábon járni, de általában négy lábon közlekednek, vagy a fákon függeszkedve (gibbonok).</li>
-</ul>
-    <p>Erős nemi dimorfizmus jellemzi őket: vagyis a hímek általában jóval (az orangutánok és gorillák esetén kétszer) nagyobbak a nőstényeknél. Agytérfogatuk 360–400 cm³ között változik (a nőstényeké kisebb, mint a hímeké – a gorilláké mintegy 100 cm³-rel nagyobb), ami valamivel kisebb, mint az egykor élt Australopithecus-fajoké. A nőstények kb. 8 hónap vemhesség után szülnek meg egy, ritkábban kettő utódot.</p>
-    <br>
-    <h2>Viselkedésük</h2>
-    <p>Életük, mindennapjaik tanulmányozása rendkívüli mértékben hozzájárult legközelebbi rokonaink, sőt magának az emberré válás folyamatának jobb megértéséhez. A csimpánzokat Jane Goodall, a gorillákat Dian Fossey, az orangutánokat pedig Biruté Galdikas tanulmányozta. Munkájuk során megismerhettük társas életüket, amely érdekes módon nagyon különbözik egymástól:</p>
-    <ul>
-        <li>az orangutánok magányos lények (mind a hímek, mind a nőstények külön élnek, utóbbiak a kölykeikkel);</li>
-        <li>a csimpánzok laza, rokon hímek vezette csoportokban élnek, a bonobók nagyszámú csoportjait a domináns nőstények vezetik;</li>
-        <li>a gorillák domináns („ezüsthátú”) hímek vezette csoportokban élnek, amelyek nőstényekből és azok kölykeiből állnak (hárem).</li>
-    </ul>
-    <p>Az emberszabású majmok növényevő állatok, de a csimpánzok – ha szerét ejthetik – csoportosan vadásznak kisebb állatokra. Nagy újdonságnak számított a tudományos világban a csimpánzok más csoportbeliek elleni szervezett agressziója, amelynek során többen halálosan megsebesítenek egy másik csoportba tartozó fajtársat.</p>
-    <p>Emberszerűségük miatt sok tudós, sok művész (sok mecénás) és úgy általában sok ember érdeklődését felkeltették már, és ez így van napjainkban is. Sok valós vagy kitalált emberszabású tett szert komoly hírnévre.</p>
-    <br>
-    <h2>Jelenleg élő emberszerű fajok</h2>
-    <p>Jelenleg nyolc emberszerű faj él a Földön az emberrel együtt, a gibbonokon kívül:</p>
-    <ul>
-        <li>Borneói orangután <span style="font-style: italic;">(Pongo pygmaeus)</span></li>
-        <li>Szumátrai orangután <span style="font-style: italic;">(Pongo abelii)</span></li>
-        <li>Tapanuli orangután <span style="font-style: italic;">(Pongo tapanuliensis)</span></li>
-        <li>Nyugati gorilla <span style="font-style: italic;">(Gorilla gorilla)</span></li>
-        <li>Keleti gorilla <span style="font-style: italic;">(Gorilla beringei)</span></li>
-        <li>Közönséges csimpánz <span style="font-style: italic;">(Pan troglodytes)</span></li>
-        <li>Bonobó <span style="font-style: italic;">(Pan paniscus)</span></li>
-        <li>Ember <span style="font-style: italic;">(Homo sapiens)</span></li>
-    </ul>
- <br>
- <h2>Galéria</h2>
- <div id="box-1" class="keret">
-    <img id="orangutan" src="kepek/male-orangutan-pofalebenyekkel.jpg" alt="orangutan" title="Hím borneói orangután pofalebenyekkel">
-    <p>A domináns hím orangutánok pofalebenyeket növesztenek. A képen egy hím borneói orangután látható.</p>
-</div>
-<div id="box-3" class="keret">
-    <img id="chimpanzee" src="kepek/black-chimpanzee-szabadban.jpg" alt="chimpanzee" title="Egy sötét bőrű csimpánz">
-    <p>Egy sötét bőrű csimpánz.</p>
-</div>
-<div id="box-2" class="keret">
-    <img id="gorilla" src="kepek/gorilla-in-zoo.jpg" alt="gorilla" title="Egy állatkerti gorilla">
-    <p>Egy állatkerti gorilla.</p>
-</div>
-<div id="box-5" class="keret">
-    <img id="siamang" src="kepek/siamang-maszokan.jpg" alt="siamang" title="Sziamang">
-    <p>A sziamang a legnagyobb termetű gibbonféle. A teste eléri a 60 - 80 cm-es hosszúságot.</p>
-</div>
-<div id="box-4" class="keret">
-    <img id="bonobo" src="kepek/evo-bonobo.jpg" alt="bonobo" title="Egy evő bonobó">
-    <p>Egy evő bonobó.</p>
-</div>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<h2>Források</h2>
-<ul>
-    <li><a href="https://hu.wikipedia.org/wiki/Emberszer%C5%B1ek">Emberszerűek - Wikipédia</a></li>
-    <li><a href="https://hu.wikipedia.org/wiki/Sziamang">Sziamang - Wikipédia</a></li>
-    <li><a href="https://hu.wikipedia.org/wiki/Orangut%C3%A1n">Orangután - Wikipédia</a></li>
-</ul>
+
+<body id="page-top">
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container">
+            <a class="logo navbar-brand" href="#page-top">egységteszt maven-el</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
+                    <li class="nav-item"><a class="nav-link text-center text-lg-start" href="#about">lépések</a></li>
+                    <li class="nav-item"><a class="nav-link text-center text-lg-start" href="#portfolio">saját
+                            projekt</a></li>
+                    <li class="nav-item"><a class="nav-link text-center text-lg-start" href="#projekt">maven projekt</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link text-center text-lg-start" href="#def">definíciók</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Masthead-->
+    <header class="masthead">
+        <div class="container">
+            <div class="masthead-subheading">Összefoglalás a tesztelésről!</div>
+            <div class="masthead-heading text-uppercase">Maven bemutatása</div>
+            <a class="d-inline-flex" href="#about"><i class="fas fa-chevron-circle-down"></i></a>
+        </div>
+    </header>
+    <!-- About-->
+    <section class="page-section" id="about">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase">Lépések</h2>
+            </div>
+            <ul class="timeline">
+                <li>
+                    <embed class="about-bg1" src="assets/img/projekt/bg2.svg" alt="">
+                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/1.jpg"
+                            alt="..." /></div>
+                    <div class="timeline-panel">
+                        <div class="timeline-heading">
+                            <h4 class="subheading">A tesztelés lépései</h4>
+                        </div>
+                        <div class="timeline-body">
+                            <ol>
+                                <li>Meghatározzuk az értelmezési tartományt.</li>
+                                <li>Meghatározzuk az értékkészletet.</li>
+                                <li>Be- és kimeneteli értékpárokat választunk ki.</li>
+                                <li>Megírjuk a tesztesetek kiértékelését.</li>
+                                <li>A metódus meghívása / függvény készítése.</li>
+                                <li>Két eset lehetséges:</li>
+                                <ul>
+                                    <li>A függvény jó.</li>
+                                    <li>A függvény rossz. Ilyenkor újra elkészítjük a függvényt.</li>
+                                </ul>
+                                <li>Refaktorizáció</li>
+                                <li>Dokumentáció</li>
+                            </ol>
+                        </div>
+                    </div>
+                </li>
+                <li class="timeline-inverted">
+                    <embed class="about-bg2" src="assets/img/projekt/bg1.svg" alt="">
+                    <div class="timeline-image"><img class="rounded-circle img-fluid" src="assets/img/about/2.jpg"
+                            alt="..." /></div>
+                    <div class="timeline-panel">
+                        <div class="timeline-heading">
+                            <h4 class="subheading">Egységteszt készítése</h4>
+                        </div>
+                        <div class="timeline-body">
+                            <p>
+                                A tesztesetekhez tartozó metóduselemek a snake case-t követik. Ez azt jelenti, hogy a
+                                szavak között aláhúzás van, és minden szó kisbetűvel van írva.
+                                Az elsődleges cél, hogy a teszteseteket meghatározzuk. A teszteseteket részfeladatokra
+                                osztjuk. A bemenő értéknek kell adni kimenő értékeket.
+                                Az értékeket bedobjuk a fekete dobozba. Be- és kimeneteli párokat kell meghatároznunk.
+                                A teszt és a kód egy helyen vannak, egy projekt részei, együtt kerülnek átadásra.
+                                A tesztesetek számossága annyi legyen, hogy minden eshetőségre legyen benne példa.
+                            </p>
+                        </div>
+                    </div>
+                </li>
+                <li class="timeline-inverted">
+                    <a href="#portfolio" class="timeline-image">
+                        <h4>
+                            Jöhet <br> a <br> tesztelés!
+                        </h4>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <!-- Portfolio Grid-->
+    <section class="page-section bg-light" id="portfolio">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase">Saját tesztelések</h2>
+                <h3 class="section-subheading text-muted">Geri és Beni saját tesztelése</h3>
+            </div>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <!-- Portfolio item 1-->
+                    <div class="portfolio-item">
+                        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">Geri</div>
+                                <div class="portfolio-caption-subheading text-muted">alkalmazás teszt</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <!-- Portfolio item 2-->
+                    <div class="portfolio-item">
+                        <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal2">
+                            <div class="portfolio-hover">
+                                <div class="portfolio-hover-content"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <div class="portfolio-caption">
+                                <div class="portfolio-caption-heading">Beni</div>
+                                <div class="portfolio-caption-subheading text-muted">alkalmazás teszt</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Projekt Grid-->
+    <section id="projekt">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase">maven projekt</h2>
+            </div>
+            <div class="row mt-5">
+                <div class="col-sm-6 col-lg-3 mb-4">
+                    <!-- Portfolio item 1-->
+                    <div class="portfolio-item shadow">
+                        <a class="portfolio-link" data-bs-toggle="modal" href="#projektModal1">
+                            <img class="img-fluid" src="assets/img/projekt/mvnrepository.jpg" alt="..." />
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-subheading text-muted p-3">1. Ellátogatunk a következő
+                                oldalra: <a href="https://mvnrepository.com">https://mvnrepository.com</a></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3 mb-4">
+                    <!-- Portfolio item 2-->
+                    <div class="portfolio-item shadow">
+                        <a class="portfolio-link" data-bs-toggle="modal" href="#projektModal2">
+                            <img class="img-fluid" src="assets/img/projekt/mvnrepository.com.engine.jpg" alt="..." />
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-subheading text-muted p-3">2. Beírjuk a keresőbe a következő
+                                kulcskifejezést: „Junit 5 Jupiter AP”</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3 mb-4">
+                    <!-- Portfolio item 3-->
+                    <div class="portfolio-item shadow">
+                        <a class="portfolio-link" data-bs-toggle="modal" href="#projektModal3">
+                            <img class="img-fluid" src="assets/img/projekt/mvnrepository.com.5.7.1.copyjpg.JPG"
+                                alt="..." />
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-subheading text-muted p-3">
+                                <p>3. Rákattintunk a keresett találatra.</p>
+                                <p>4. Kiválasztjuk a szükséges verziót (pl. 5.7.1, bár ezt a dokumentumban átírhatjuk).
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3 mb-4">
+                    <!-- Portfolio item 4-->
+                    <div class="portfolio-item shadow">
+                        <a class="portfolio-link" data-bs-toggle="modal" href="#projektModal4">
+                            <img class="img-fluid" src="assets/img/projekt/bemutato-properties.JPG" alt="..." />
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-subheading text-muted p-3">5. Kimásoljuk belőle a „Maven”
+                                fülben lévő szöveget, és beillesztjük az IntelliJ-nk pom.xml fájlába, a "properties"
+                                részlegbe.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3 mb-4">
+                    <!-- Portfolio item 5-->
+                    <div class="portfolio-item shadow">
+                        <a class="portfolio-link" data-bs-toggle="modal" href="#projektModal5">
+                            <img class="img-fluid" src="assets/img/projekt/mvnrepository.com.junit5.jupiterjpg.JPG"
+                                alt="..." />
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-subheading text-muted p-3">6. Ezúttal a következő
+                                kulcskifejezést írjuk be a keresőbe: „Junit 5 Jupiter Engine”.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3 mb-4">
+                    <!-- Portfolio item 6-->
+                    <div class="portfolio-item shadow">
+                        <a class="portfolio-link" data-bs-toggle="modal" href="#projektModal6">
+                            <img class="img-fluid" src="assets/img/projekt/mvnrepository.com.5.7.1.copy2jpg.JPG"
+                                alt="..." />
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-subheading text-muted p-3">
+                                <p>7.Rákattintunk a keresett találatra.</p>
+                                <p>8.Kiválasztjuk a szükséges verziót (pl. 5.7.1, bár ezt a dokumentumban átírhatjuk).
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3 mb-4">
+                    <!-- Portfolio item 7-->
+                    <div class="portfolio-item shadow">
+                        <a class="portfolio-link" data-bs-toggle="modal" href="#projektModal7">
+                            <img class="img-fluid" src="assets/img/projekt/bemutato-properties2.JPG" alt="..." />
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-subheading text-muted p-3">9. Kimásoljuk belőle a „Maven”
+                                fülben lévő szöveget, és beillesztjük az IntelliJ-nk pom.xml fájlába, a "properties"
+                                részlegbe.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3 mb-4">
+                    <!-- Portfolio item 8-->
+                    <div class="portfolio-item shadow">
+                        <a class="portfolio-link" data-bs-toggle="modal" href="#projektModal8">
+                            <img class="img-fluid" src="assets/img/projekt/mvnrepository.com.engine.jpg" alt="..." />
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-subheading text-muted p-3">10. Keressünk rá erre: „Junit 5
+                                Jupiter Params”.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3 mb-4">
+                    <!-- Portfolio item 9-->
+                    <div class="portfolio-item shadow">
+                        <a class="portfolio-link" data-bs-toggle="modal" href="#projektModal9">
+                            <img class="img-fluid" src="assets/img/projekt/mvnrepository.com.5.7.1.copy3jpg.JPG"
+                                alt="..." />
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-subheading text-muted p-3">
+                                <p>11. Rákattintunk a keresett találatra.</p>
+                                <p>12. Kiválasztjuk a szükséges verziót (pl. 5.7.1, bár ezt a dokumentumban átírhatjuk).
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-3 mb-4">
+                    <!-- Portfolio item 10-->
+                    <div class="portfolio-item shadow">
+                        <a class="portfolio-link" data-bs-toggle="modal" href="#projektModal10">
+                            <img class="img-fluid" src="assets/img/projekt/bemutato-properties3.JPG" alt="..." />
+                        </a>
+                        <div class="portfolio-caption">
+                            <div class="portfolio-caption-subheading text-muted p-3">
+                                <p>13. Kimásoljuk belőle a „Maven” fülben lévő szöveget, és beillesztjük az IntelliJ-nk
+                                    pom.xml fájlába, a "properties" részlegbe.</p>
+                                <p><mark>Megjegyzés:</mark> fontos, hogy mindegyik típusból ugyanazt a verziót töltsük
+                                    le. (Pl. Ap-ból, Engine-ből és Paramsból is az 5.7.1-est.)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <section id="def">
+        <div class="def-content container">
+            <div class="def-title">
+                Definíciók
+            </div>
+            <div class="def-text">
+                <ol>
+                    <li>Fekete doboz: a fekete doboz (black box) egy komplex számítógépes program, ami csak felszínesen
+                        érhető el/érthető meg. Az inputokat és az outputokat meg lehet vizsgálni, de magához a köztes
+                        folyamathoz nincs hozzáférés a program bizalmas mivolta miatt. Például, a Google algoritmusa egy
+                        fekete doboz. (Forrás: https://thepitch.hu/online-marketing-szotar/fekete-doboz/)</li>
+                    <li>@BeforeEach: a test típusú annotációval ellátott metódusok lefutása előtt lefuttatandó metódus.
+                    </li>
+                    <li>@AfterEach: a test típusú annotációval ellátott metódusok lefutása után lefuttatandó metódus.
+                    </li>
+                    <li>@BeforeAll: az összes test típusú annotáció előtt fut lefutó metódus.</li>
+                    <li>@AfterAll: az összes test típusú annotáció után fut lefutó metódus.</li>
+                    <li>Annotáció: olyan nyelvű elem, amely lehetővé teszi a metaadatok beépítését a forráskódba.</li>
+                </ol>
+            </div>
+        </div>
+
+    </section>
+    <footer>
+        <div class="container text-center pt-3 pb-3 pt-sm-0">
+            <span>copyright</span> &#169; <span id="datum"></span>
+        </div>
+    </footer>
+
+    <!-- Portfolio Modals-->
+    <!-- Portfolio item 1 modal popup-->
+    <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg"
+                        alt="Close modal" /></div>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="modal-body">
+                                <!-- Project details-->
+
+                                <div class="portfolio-code">
+                                    <div class="pb-5">
+                                        <p>import org.junit.jupiter.api.Test;</p>
+                                        <p class="mt-5">public class FirstTestClass {</p>
+
+                                        <p>List < String> nevek = new ArrayList<>();</p>
+                                        <p>@Test</p>
+                                        <p>@DisplayName("Az első tesztem IntelliJ Idea-val")</p>
+                                        <p>public void probateszt(){</p>
+                                        <p> assertEquals(expected 4, actual 2 + 2);</p>
+                                        <p>}</p>
+                                        <p>@Test</p>
+                                        <p>@DisplayName("Az első AL tesztem")</p>
+                                        <p>public void listTest(){</p>
+                                        <p> assertEquals(expected 0, nevek.size);</p>
+                                        <p>}</p>
+                                        <p>private int megszamlalas(){</p>
+                                        <p> int darab = 0;</p>
+                                        <p> for(Integer elem : szamlista)</p>
+                                        <p> if(elem % 2 == 0)</p>
+                                        <p>
+                                            }
+                                            }
+                                        </p>
+                                    </div>
+                                    <div class="mt-5">
+                                        <p>import org.junit.jupiter.api.DisplayName;</p>
+                                        <p>import org.junit.jupiter.api.Test;</p>
+                                        <p class="mt-5">public class Dolgozat {</p>
+                                        <p>/**</p>
+                                        <p>* Lehetséges bemenet értékei</p>
+                                        <p>* ára: 0-23</p>
+                                        <p>* perc 0-59</p>
+                                        <p>*</p>
+                                        <p>* Ha hibás értéket adunk át paraméterként, akkor térjen vissza</p>
+                                        <p>* -1 értékkel (lehetne más is)</p>
+                                        <p>* Kategóriák(a tesztelés során milyen főbb esetek fordulhatnak elő, de az
+                                            int,</p>
+                                        <p>amit átadok, az ezen kívül is lehet; ezekkel kell valamit kezdeni):</p>
+                                        <p>* - mindkettő negatív</p>
+                                        <p>* - egyik jó, másik negítív</p>
+                                        <p>* - egyik jó, másik negatív - 2 estete jelent</p>
+                                        <p>* - egyik jó, másik túlcsordult - 2 esetet jelent</p>
+                                        <p>* - mindkettő jó</p>
+                                        <p>* - mindkettő 0</p>
+                                        <p>* -egyik 0, másik negatív (2 eset)</p>
+                                        <p>*/</p>
+                                        <p>@Test</p>
+                                        <p>@DisplayName("Mai időpont átalakítása percre metódus tesztelése")</p>
+                                        <p>public void tesztAtalakitas(){</p>
+                                        <p>assertEqulas(-1, toPerc(-2, -4));</p>
+                                        <p>}</p>
+                                        <p>private int toPerc(int ora, int perc){</p>
+                                        <p>if (ora < 0 || perc < 0)</p>
+                                    </div>
+                                    <div>
+
+                                    </div>
+                                </div>
+
+                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal"
+                                    type="button">
+                                    <i class="fas fa-times me-1"></i>
+                                    bezár
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Portfolio item 2 modal popup-->
+    <div class="portfolio-modal modal fade" id="portfolioModal2" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg"
+                        alt="Close modal" /></div>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8">
+                            <div class="modal-body">
+                                <!-- Project details-->
+                                <div class="portfolio-code">
+                                    <div class="pb-5">
+                                        <p>public class Gyakorlas {</p>
+                                        <p>public void bemenetEllenorzes(String bemenet) throws RosszSzamExceptoin{</p>
+                                        <p>try{</p>
+                                        <p>Integer.parseInt(bement);</p>
+                                        <p>}catch(numberFormatException exc){</p>
+                                        <p>throw new RosszSzamException("Nem lehet belőle egészet csinálni");</p>
+                                        <p>}</p>
+                                        <p>}try{</p>
+                                        <p>Double.parseDouble(bemenet):</p>
+                                        <p>}catch(NumberFormatException exx{</p>
+                                        <p>throw new Rosszszamexception("Nem lehet belőle double.t csinálni");</p>
+                                        <p>}</p>
+                                        <p>}</p>
+                                        <p>@Test</p>
+                                        <p>@DisplayName("Tesztelem a bemenetet")</p>
+                                        <p>public void BemenetTeszt01(){</p>
+                                        <p>Throwable kivetel = assertThpes(Rosszszamexception.class, () -></p>
+                                        <p>{bemenetEllenrzes("234");});</p>
+                                        <p>assertEquals(expected "Nem lehet belőle egészet csinálni",</p>
+                                        <p>kivetel.getMessage());</p>
+                                    </div>
+                                    <div class="mt-5">
+                                        <p>public class ExceptionTest {</p>
+                                        <p>public int szamEllenorzes(int szam) threws RosszamException{</p>
+                                        <p>if (szam < 0) throw new RosszSzamException("Ez egy negatív szám:"); return 0;
+                                                }</p>
+                                                <p> @Test DisplayName("Teszteljük az exceptiont"); private void</p>
+                                                <p> szamExceptionTest(){ Throwable kivetel;</p>
+                                                <p> kivetel=assertThrwes(Rosszszamexception.class, () ->
+                                                    {szamEllenorzes(-5);});</p>
+                                                <p> }</p>
+                                                <p> }</p>
+
+                                    </div>
+                                    <div class="pb-5">
+                                        <p>public class Rosszszamexception {</p>
+                                        <p>/*</p>
+                                        <p>IO : IP; DB <- LEKEZELENDŐ eXCEPITON LESZÁRMAZOTTJA exception különleges</p>
+                                                <p> leszármzaottja a RunTimeExceptiion ArithnometicException : nullával
+                                                    osztunk</p>
+                                                <p> ArrayOurOfBournesException : nem jó indexet hazsnálunk a tömb
+                                                    esetében */</p>
+                                                <p> public Rosszszamexception() extends Exception{ } }</p>
+                                    </div>
+                                    <div class="mt-5">
+                                        <p>public class EmeTest {</p>
+                                        <p>private void semmitNemCsinal() throws InterruptedException{</p>
+                                        <p>System.out.println("Kezdet");</p>
+                                        <p>Thread.sleep(millis 100);</p>
+                                        <p>System.out.println("Vég");</p>
+                                        <p>}</p>
+                                        <p>@Test</p>
+                                        <p>@DisplayName("Időzítés teszt")</p>
+                                        <p>public void tineTest(){</p>
+                                        <p>assertTimeout(offMillis(100), () -> {Thread.sleep(millis:100); });</p>
+                                        <p>assertTimeout(offMillis(200), () -> {(semmitNemCsinal(); });</p>
+                                        <p>}</p>
+                                        <p>}</p>
+                                    </div>
+
+                                </div>
+                                <button class="btn btn-primary btn-xl text-uppercase" data-bs-dismiss="modal"
+                                    type="button">
+                                    <i class="fas fa-times me-1"></i>
+                                    bezár
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Projekt item 1 modal popup-->
+    <div class="portfolio-modal modal fade" id="projektModal1" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg"
+                        alt="Close modal" /></div>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="shadow-lg">
+                            <div class="modal-body">
+                                <img class="img-fluid" src="assets/img/projekt/mvnrepository.jpg" alt="..." />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Projekt item 2 modal popup-->
+    <div class="portfolio-modal modal fade" id="projektModal2" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg"
+                        alt="Close modal" /></div>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="shadow-lg">
+                            <div class="modal-body">
+                                <img class="img-fluid" src="assets/img/projekt/mvnrepository.com.engine.jpg"
+                                    alt="..." />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Projekt item 3 modal popup-->
+    <div class="portfolio-modal modal fade" id="projektModal3" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg"
+                        alt="Close modal" /></div>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="shadow-lg">
+                            <div class="modal-body">
+                                <img class="img-fluid" src="assets/img/projekt/mvnrepository.com.5.7.1.copyjpg.JPG"
+                                    alt="..." />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Projekt item 4 modal popup-->
+    <div class="portfolio-modal modal fade" id="projektModal4" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg"
+                        alt="Close modal" /></div>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="shadow-lg">
+                            <div class="modal-body">
+                                <img class="img-fluid" src="assets/img/projekt/bemutato-properties.JPG" alt="..." />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Projekt item 5 modal popup-->
+    <div class="portfolio-modal modal fade" id="projektModal5" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg"
+                        alt="Close modal" /></div>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="shadow-lg">
+                            <div class="modal-body">
+                                <img class="img-fluid" src="assets/img/projekt/mvnrepository.com.junit5.jupiterjpg.JPG"
+                                    alt="..." />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Projekt item 6 modal popup-->
+    <div class="portfolio-modal modal fade" id="projektModal6" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg"
+                        alt="Close modal" /></div>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="shadow-lg">
+                            <div class="modal-body">
+                                <img class="img-fluid" src="assets/img/projekt/mvnrepository.com.5.7.1.copy2jpg.JPG"
+                                    alt="..." />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Projekt item 7 modal popup-->
+    <div class="portfolio-modal modal fade" id="projektModal7" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg"
+                        alt="Close modal" /></div>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="shadow-lg">
+                            <div class="modal-body">
+                                <img class="img-fluid" src="assets/img/projekt/bemutato-properties2.JPG" alt="..." />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Projekt item 8 modal popup-->
+    <div class="portfolio-modal modal fade" id="projektModal8" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg"
+                        alt="Close modal" /></div>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="shadow-lg">
+                            <div class="modal-body">
+                                <img class="img-fluid" src="assets/img/projekt/mvnrepository.com.engine.jpg"
+                                    alt="..." />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Projekt item 9 modal popup-->
+    <div class="portfolio-modal modal fade" id="projektModal9" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg"
+                        alt="Close modal" /></div>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="shadow-lg">
+                            <div class="modal-body">
+                                <img class="img-fluid" src="assets/img/projekt/mvnrepository.com.5.7.1.copy3jpg.JPG"
+                                    alt="..." />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Projekt item 10 modal popup-->
+    <div class="portfolio-modal modal fade" id="projektModal10" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="close-modal" data-bs-dismiss="modal"><img src="assets/img/close-icon.svg"
+                        alt="Close modal" /></div>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="shadow-lg">
+                            <div class="modal-body">
+                                <img class="img-fluid" src="assets/img/projekt/bemutato-properties3.JPG" alt="..." />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="js/scripts.js"></script>
 </body>
+
 </html>
